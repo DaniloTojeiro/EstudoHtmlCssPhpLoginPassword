@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 16-10-23</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Formulário de Cadastro de Clientes</h1>
+    <hr>
+    <br>
+    <div class="formulario">
+        <form name="Cadastro" action="table_script.php" method="post" accept-charset="UTF-8">
+            <label for="nomeCliente">Nome do Cliente:</label>
+            <input type="text" name="nomeCliente" id="nomeCliente" size="30" placeholder="Digite o nome aqui" autofocus>
+            <br>
+            <br>
+            <label for="sobrenomeCliente">Sobrenome do Cliente:</label>
+            <input type="text" name="sobrenomeCliente" id="sobrenomeCliente" size="30" placeholder="Digite o sobrenome aqui" autofocus>
+            <br>
+            <br>
+            <div>
+                <label for="sexo">Gênero:</label>
+                <select name="sexo" id="sexo">
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                    <option value="N">Outro</option>
+                </select>
+                <!-- Campo de entrada de texto que será exibido quando "Outro" for selecionado -->
+                <input type="text" name="outro" id="outroInput" style="display: none;" placeholder="Especifique o gênero">
+        
+                <script>
+                    function mostrarCampoOutro() {
+                        var select = document.getElementById("sexo");
+                        var inputOutro = document.getElementById("outroInput");
+                        if (select.value === "N") {
+                            inputOutro.style.display = "block";
+                        } else {
+                            inputOutro.style.display = "none";
+                        }
+                    }
+                    // Adicione um ouvinte de evento para detectar mudanças na seleção
+                    document.getElementById("sexo").addEventListener("change", mostrarCampoOutro);
+                    // Certifique-se de chamar a função inicialmente para verificar o estado inicial
+                    mostrarCampoOutro();
+                </script>
+            </div>
+            <br>
+            <label for="cpf">CPF:</label>
+            <input type="text" name="cpf" id="cpf" size="11" placeholder="Digite o CPF aqui" autofocus>
+            <br>
+            <br>
+            <label for="tipo">Escolha o tipo:</label>
+            <input type="radio" name="tipo" value="Prestador"> Prestador
+            <input type="radio" name="tipo" value="Contratante"> Contratante
+            <br>
+            <br>
+            <input type="submit" name="submit" value="Enviar">
+            <br>
+            <br>
+            <input type="reset" name="reset" value="Reset">
+        </form>
+    </div>
+
+    <br>
+
+    <div class="botao">
+        <a href="./pdf_script.php" target="_blank">
+            <button>Relatório de Clientes Cadastrados</button>
+        </a>
+    </div>
+</body>
+</html>

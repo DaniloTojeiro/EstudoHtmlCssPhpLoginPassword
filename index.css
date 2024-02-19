@@ -1,0 +1,20 @@
+.formulario {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    width: 50%;
+    font-weight: bold;
+}
+h1 {
+    font-family: Arial Narrow, sans-serif;
+    margin: 0 auto;
+    width: 50%;
+}
+.botao {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    width: 50%;
+}
+hr {
+    height: 10px;
+    background-color: black;
+}
